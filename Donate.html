@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate</title>
+<style>
+body {
+  background-color: #4b5320;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+.wallet {
+  background: #333;
+  padding: 10px;
+  margin: 10px auto;
+  width: 90%;
+  word-wrap: break-word;
+  border-radius: 5px;
+  color: #888; /* faded text */
+  font-style: italic;
+}
+button {
+  background-color: #6b8e23;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+button:hover {
+  opacity: 0.9;
+}
+img {
+  margin: 20px 0;
+  max-width: 200px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+#copied-msg {
+  margin-top: 10px;
+  color: #90ee90;
+  font-weight: bold;
+  display: none;
+}
+</style>
+</head>
+<body>
+
+<h1>Support Our Heroes</h1>
+<p>Thank you for supporting our mission. You can donate Bitcoin using the button below.</p>
+
+<h2>Bitcoin Wallet Address</h2>
+<div class="wallet">
+[ Click the button below to copy the Bitcoin wallet address ]
+</div>
+
+<button onclick="copyWallet()">📋 Copy Wallet Address</button>
+<div id="copied-msg">✅ Bitcoin wallet copied to clipboard!</div>
+
+<h2>Or Scan QR Code</h2>
+<img src="static/qrcode.png" alt="Bitcoin QR Code">
+
+<hr>
+
+<p>If you want to donate via PayPal, Bank Transfer, or any other method, please contact us:</p>
+<a href="contact.html">
+  <button>💬 Contact Support</button>
+</a>
+
+<script>
+function copyWallet() {
+  const walletAddress = "bc1qjmnunn8mcxwwtss3f7ggp4ud05ckpegkh9cpup";
+  navigator.clipboard.writeText(walletAddress).then(() => {
+    document.getElementById("copied-msg").style.display = "block";
+    setTimeout(() => {
+      document.getElementById("copied-msg").style.display = "none";
+    }, 3000);
+  });
+}
+</script>
+
+</body>
+</html>

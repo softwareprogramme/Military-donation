@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Support</title>
+<style>
+body {
+  background-color: #4b5320;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 40px;
+}
+h1 {
+  margin-bottom: 20px;
+}
+.button {
+  display: inline-block;
+  margin: 20px;
+  padding: 20px 40px;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+.email {
+  background-color: #6b8e23;
+}
+.telegram {
+  background-color: #0088cc;
+}
+</style>
+</head>
+<body>
+
+<h1>Contact Support</h1>
+<p>Please choose how you would like to reach us for alternative donation methods (PayPal, Bank Transfer, etc.):</p>
+
+<a class="button email" href="#" onclick="openEmail()">📧 Contact via Email</a>
+
+<a class="button telegram" href="#" onclick="openTelegram()">💬 Contact via Telegram</a>
+
+<script>
+function openEmail() {
+  window.location.href = "mailto:mltrcharity@gmail.com?subject=Donation%20Support&body=Hello,%20I%20would%20like%20to%20donate%20but%20need%20more%20details.";
+}
+
+function openTelegram() {
+  // Open in app if possible
+  window.location.href = "tg://resolve?domain=mltrcharity";
+  // Fallback to web after short delay
+  setTimeout(() => {
+    window.location.href = "https://t.me/mltrcharity";
+  }, 500);
+}
+</script>
+
+</body>
+</html>
